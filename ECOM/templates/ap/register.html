@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Registration{% endblock title %}
+
+{% block forms %}
+
+<!-- Registration Form -->
+<form action="ap/register" method="post">
+    {% csrf_token %}
+    <label for="email">Email</label>
+        <div class="form-group">
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+    
+    <label for="pass1">Password</label>
+        <div class="form-group">
+            <input type="password" class="form-control" id="pass1" name="pass1" required>
+        </div>
+    
+    <label for="pass2">Password</label>
+        <div class="form-group">
+            <input type="password" class="form-control" id="pass2" name="pass2" required>
+        </div>
+    <div>
+        <button type="submit" class="btn">Register</button>
+    </div>
+
+</form>
+
+{% endblock forms %}
